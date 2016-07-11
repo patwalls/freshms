@@ -1,28 +1,28 @@
-== README
+## High Level
++ Rails Backend - Postgresql
++ Ember Frontend
++ Twilio API
++ Mechanize Gem - allows interaction with HasItLeaked Site to sign up for alerts
++ Mailcatcher Gem - allows parsing of emails to send text notifications to users
++ Nokogiri Gem - to scrape hasitleaked.com (TBD)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Schema
++ Users - phone number, password_digest, name
++ Albums - title, artist, url
++ Notifications (join table) - user_id, album_id
 
-Things you may want to cover:
+## Web User Interface Features
++ [ ] sign up with phone number and password - ':tel' input type - password field twice - name
++ [ ] sign in with phone number and password - ':tel' input type
++ [ ] ability to input hasitleaked.com URL to sign up for notifications
++ [ ] ability to see all current albums following
++ [ ] ability to cancel notification
++ [ ] delete account
 
-* Ruby version
+## Text Interface Features
++ [ ] Phone number verification
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Additional Features
++ [ ] Ability to search artists on frontend and see/sign up for their albums
++ [ ] ability to pause all notifications
++ [ ] Ability to STOP receiving any messages
