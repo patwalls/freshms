@@ -1,0 +1,2 @@
+@titleFormat = (title) ->
+    title.toUpperCase()
