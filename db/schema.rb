@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160711010258) do
+ActiveRecord::Schema.define(version: 20160711050923) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
     t.string   "link"
     t.date     "leak_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "leaked",     default: false
   end
 
   create_table "users", force: :cascade do |t|
