@@ -11,7 +11,7 @@
     handleSubmit: (e) ->
       console.log('submit is trying')
       e.preventDefault()
-      $.post '', { project: @state }, (data) =>
+      $.post 'projects', { project: @state }, (data) =>
         @props.handleNewProject data
         @setState @getInitialState()
       , 'JSON'

@@ -8,7 +8,7 @@
 
 ## Schema
 + Users - phone number, password_digest, name
-+ Albums - title, artist, url
++ Projects - title, artist, link, release_date
 + Notifications (join table) - user_id, album_id
 
 ## Web User Interface Features
