@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
     if @project.save
+      @project.set_project_attributes
       render json: @project
     else
       render json: @project.errors, status: unprocessable_entity

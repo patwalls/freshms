@@ -1,15 +1,12 @@
   @ProjectForm = React.createClass
     getInitialState: ->
-      title: ''
       link: ''
-      leak_date: ''
     handleChange: (e) ->
       name = e.target.name
       @setState "#{ name }": e.target.value
     valid: ->
-      @state.title && @state.link && @state.leak_date
+      @state.link
     handleSubmit: (e) ->
-      console.log('submit is trying')
       e.preventDefault()
       $.post 'projects', { project: @state }, (data) =>
         @props.handleNewProject data
@@ -24,30 +21,12 @@
           React.DOM.input
             type: 'text'
             className: 'form-control'
-            placeholder: 'Title'
-            name: 'title'
-            value: @state.title
-            onChange: @handleChange
-        React.DOM.div
-          className: 'form-group'
-          React.DOM.input
-            type: 'text'
-            className: 'form-control'
-            placeholder: 'Link'
+            placeholder: 'hasitleaked.com link'
             name: 'link'
             value: @state.link
-            onChange: @handleChange
-        React.DOM.div
-          className: 'form-group'
-          React.DOM.input
-            type: 'date'
-            className: 'form-control'
-            placeholder: 'Leak Date'
-            name: 'leak_date'
-            value: @state.leak_date
             onChange: @handleChange
         React.DOM.button
           type: 'submit'
           className: 'btn btn-primary'
           disabled: !@valid()
-          'Create Project'
+          'Add New Project'
